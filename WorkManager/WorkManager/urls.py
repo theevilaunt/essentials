@@ -22,6 +22,6 @@ urlpatterns = [
 	url(r'^$', page),
 	#url(r'^index$', page, name="public_index"),
 	#url(r'^connection$', connection, name="public_conection"),
-	url(r'^index$', page),
+	url(r'^index$', page, name="public_index"),
 	url(r'^connection$', connection, name="public_connection")	
 ]
