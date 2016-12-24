@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from TaskManager.views import page, connection, add_project, display_projects
+from TaskManager.views import page, connection, add_project, display_projects, display_mine, display1
 
 urlpatterns = [
 	url(r'^admin/', admin.site.urls),
@@ -24,6 +24,8 @@ urlpatterns = [
 	#url(r'^connection$', connection, name="public_conection"),
 	url(r'^index$', page, name="public_index"),
     url(r'^add$', add_project),
-    url(r'^display$', display_projects),        
+    url(r'^display$', display_projects),
+    url(r'^mine$', display_mine),
+    url(r'^one$', display1),         
 	url(r'^connection$', connection, name="public_connection")	
 ]

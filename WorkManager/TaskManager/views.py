@@ -37,9 +37,25 @@ def add_project(request):
 def display_projects(request):
 	all_projects = Project.objects.all()
 	context = {
-		'action': 'Display all projects',
+		'action': 'Display ALL projects',
 		'all_projects': all_projects,
 	}
 	return render(request, 'display.html',context)
+
+def display_mine(request):
+	my_projects = Project.objects.filter(client_name = "Me")
+	context = {
+		'action': 'Display MY projects',
+		'my_projects': my_projects,
+	}
+	return render(request, 'display.html',context)
+
+def display1(request):
+	one_project = Project.objects.filter(client_name="Me").order_by("id")[:1].get() # example of queryset chaining
+	context = {
+		'action': 'Display ONE project',
+		'one_project': one_project,
+	}
+	return render(request, 'display.html',context)	
 	
 
