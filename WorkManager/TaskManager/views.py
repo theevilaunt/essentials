@@ -56,6 +56,13 @@ def display1(request):
 		'action': 'Display ONE project',
 		'one_project': one_project,
 	}
-	return render(request, 'display.html',context)	
+	return render(request, 'display.html',context)
+
+def project_detail(request, pk):
+	project = Project.objects.get(id=pk)
+	context = {
+		'project': project
+	}
+	return render(request, 'project_detail.html', context)
 	
 
